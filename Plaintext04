@@ -1,0 +1,18 @@
+Gere um código Python completo usando FastAPI. O código deve conter todas as importações necessárias (FastAPI, Pydantic, datetime, uuid).
+
+O objetivo é criar um endpoint POST em `/processar_item/` que valide e processe um objeto `Item`.
+
+Siga estas especificações rigorosamente:
+
+1.  **Modelo Pydantic (Item):**
+    * Crie um `BaseModel` chamado `Item`.
+    * `nome`: tipo `str`, com validação de `max_length=25`.
+    * `valor`: tipo `float`.
+    * `data`: tipo `date`. Deve ser validada para NÃO aceitar datas futuras (a data deve ser menor ou igual à data atual). Use `Field(le=...)` ou um `@validator` para isso.
+
+2.  **Endpoint (POST /processar_item/):**
+    * O endpoint deve receber o objeto `Item` no corpo da requisição (body).
+    * Se a validação do Pydantic falhar (ex: nome com 30 caracteres ou data de amanhã), o FastAPI deve retornar o erro 422 padrão.
+    * Se a validação for bem-sucedida, o endpoint deve:
+        a. Gerar um `uuid` (UUID versão 4) dinamicamente.
+        b. Retornar um dicionário JSON (status 200) contendo TODOS os campos originais do Item (nome, valor, data) E o novo campo `uuid` gerado.
