@@ -1,0 +1,10 @@
+Aja como um professor sênior de computação gráfica.
+
+Quero que você me explique de forma didática e em uma sequência lógica, passo a passo, como o algoritmo de Ray Tracing calcula a cor final de um único pixel em uma imagem renderizada.
+
+Sua explicação deve obrigatoriamente incluir e detalhar os seguintes conceitos:
+1.  O 'Raio Primário' (lançado da câmera).
+2.  A 'Interseção' com o primeiro objeto.
+3.  O cálculo da cor local (iluminação direta) usando 'Raios de Sombra'.
+4.  O cálculo recursivo de 'Raios de Reflexão' e 'Raios de Refração'.
+5.  Como essas cores são combinadas para formar a cor final do pixel.
